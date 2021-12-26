@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Top Redditors</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Top Redditors</h1><br>
+	<p>Do you want to know top contributing users for your favorite sub reddit ? <br></p>
+	<p>Then enter a name of sub reddit in the box given below....<br><br></p>
+	<p>A user is ranked by the average number of Upvotes which he has received in that sub reddit.<br></p>
+	<p>This is a different way of ranking individuals compared to KARMA since this is exclusively for a given sub reddit and not overall 
+	reputation of the user in reddit. <br><br></p>
+	<h1>Enter the Sub reddit</h1>
+    <form action="#" th:action="@{/index}" th:object="${subreddit}" method="post">
+        <p>Sub Reddit: <input type="text" th:field="*{subreddit_path}" /></p>
+        <p><input type="submit" value="Submit" /></p>
+    </form>
+ 
+</body>
+</html>

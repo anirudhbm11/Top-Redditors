@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Top Redditors</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Top Redditors</h1>
+	
+	<p>Below are the top redditors for <b>/<span th:text="${enteredSubreddit}">subreddit</span></b> subreddit. 
+	The number shows the average number of Upvotes which the user has received for his comments in that sub reddit.</p>
+	<ul>
+	    <thyme:block th:each="entry: ${topUsers}">	    
+	        <li><to th:text="${entry.key}">Redditor</to>: <to th:text="${entry.value}">Average Upvotes</to> </li>
+	    </thyme:block>
+    </ul>
+    
+    <a href="/index">Click here to go back</a>
+</body>
+</html>
